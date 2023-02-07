@@ -1,5 +1,5 @@
 def call(){
     node {
-        sh "node helloWorld.js"
+        sh "node App.js"
     }
 }
