@@ -4,12 +4,17 @@ pipeline {
    stages {
       stage('Install') {
          steps {
-            sh 'npm install'
+            sh 'yarn start'
          }
       }
-      stage('Test') {
+     stage('Test') {
          steps {
-            sh 'npm test'
+            sh 'yarn test'
+         }
+      }
+      stage('Build') {
+         steps {
+            sh 'yarn build'
          }
       }
       stage('Push') {
