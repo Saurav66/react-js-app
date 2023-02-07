@@ -1,20 +1,20 @@
 @Library('reactJS') _
-pipeline {
+reactJarPipeline {
    agent any
    stages {
       stage('Install') {
          steps {
-            sh 'yarn start'
-         }
-      }
-     stage('Test') {
-         steps {
-            sh 'yarn test'
+            sh 'npm install'
          }
       }
       stage('Build') {
          steps {
-            sh 'yarn build'
+            sh 'npm run build'
+         }
+      }
+     stage('Test') {
+         steps {
+            sh 'npm run test'
          }
       }
       stage('Push') {
