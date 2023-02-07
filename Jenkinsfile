@@ -19,9 +19,9 @@ pipeline {
       }
       stage('Push') {
          steps {
-            sh 'sudo docker build -t react-hello-world .'
+            sh 'docker build -t react-hello-world .'
             withDockerRegistry(credentialsId: 'docker') {
-               sh 'sudo docker push react-hello-world'
+               sh 'docker push react-hello-world'
             }
          }
       }
